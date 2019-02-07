@@ -1,3 +1,6 @@
+#ifndef GLOBAL_H
+#define GLOBAL_H
+
 #define buttonA_pin 8
 #define buttonB_pin 12
 #define buttonX_pin 11
@@ -13,3 +16,9 @@ struct controller {
     int stick_xVal;
     int stick_yVal; 
 };
+
+void readAnalogStick(struct controller* stick , uint8_t xPin, uint8_t yPin, uint8_t stick_button);
+void getButtonValues(struct controller* buttonSet, uint8_t buttonA , uint8_t buttonB, uint8_t buttonX, uint8_t buttonY, uint8_t buttonShoulder);
+void serialDebug(struct controller* c1);
+
+#endif
