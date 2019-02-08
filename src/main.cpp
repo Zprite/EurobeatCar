@@ -69,4 +69,5 @@ void serialDebug(struct controller* c1){
   Serial.print("SHOULDER BUTTON: ");
   Serial.println(c1->buttonShoulder);
   delay(1000);
+  //TENIS
 }
