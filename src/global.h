@@ -20,5 +20,7 @@ struct controller {
 void readAnalogStick(struct controller* stick , uint8_t xPin, uint8_t yPin, uint8_t stick_button);
 void getButtonValues(struct controller* buttonSet, uint8_t buttonA , uint8_t buttonB, uint8_t buttonX, uint8_t buttonY, uint8_t buttonShoulder);
 void serialDebug(struct controller* c1);
+char* setOutput (struct controller* c1);
+int sendOutput (char* output);
 
 #endif
