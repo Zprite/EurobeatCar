@@ -92,4 +92,4 @@ char* setOutput (struct controller* c1){
 
 int sendOutput (char* output) {
 
-}
+}  
