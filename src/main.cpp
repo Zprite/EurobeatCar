@@ -78,22 +78,14 @@ void serialDebug(struct controller* c1){
 char* setOutput (struct controller* c1){
   char output [32];
   // STRUCTURE OF OUTPUT ARRAY : 
-  //  [-/0 , x , -/0,  y , A , B , X , Y , SHOULDER]
-  //      xVal |    yVal  | buttonA | buttonB | buttonX | buttonY | shoulderButton    
-  if(c1->stick_xVal >= 0)
-    sprintf(&output[0],"%02d",c1->stick_xVal);  // Add a leading zero
-  else 
-    sprintf(&output[0],"%d",c1->stick_xVal); 
-  if(c1->stick_yVal >= 0)
-    sprintf(&output[2],"%02d",c1->stick_yVal); // Add a leading zero 
-  else  
-    sprintf(&output[2],"%d",c1->stick_yVal);
-
-  sprintf(&output[4],"%d",c1->buttonA);
-  sprintf(&output[5],"%d",c1->buttonB);
-  sprintf(&output[6],"%d",c1->buttonX);
-  sprintf(&output[7],"%d",c1->buttonY);
-  sprintf(&output[8],"%d",c1->buttonShoulder);
+  //  [ x-axis  y-axis , A , B , X , Y , SHOULDER]
+  output[0] = c1->stick_yVal;
+  output[1] = c1->stick_xVal;
+  output[2] = c1->buttonA;
+  output[3] = c1->buttonB;
+  output[4] = c1->buttonX;
+  output[5] = c1->buttonY;
+  output[6] = c1->buttonShoulder;
   
   return output;
 }
